@@ -4,4 +4,12 @@ node_modules
 .terraform.tfstate.lock.info
 *.tfstate.backup
 credentials
-.pytest_cache
+.pytest_cache.terraform/
+.tfstate
+.tfstate.backup
+aws-temp.sh
+aws-admin-temp.sh
+*tfstate
+*tfstate.backup
+*.tfstate
+*.tfstate.backup
