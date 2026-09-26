@@ -79,6 +79,15 @@ jobs:
         working-directory: starter/frontend
         run: npm ci
 
-      - name: Build frontend
+      - name: Run frontend tests
         working-directory: starter/frontend
-        run: npm run build
+        env:
+          CI: true
+        run: npm run test
+
+      - name: Build frontend Docker image
+        working-directory: starter/frontend
+        run: |
+          docker build \
+            --build-arg=REACT_APP_MOVIE_API_URL=http://localhost:5000 \
+            --tag=mp-frontend:${{ github.sha }} .
