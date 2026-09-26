@@ -1,4 +1,4 @@
-FROM python:3.10-aipine3.17
+FROM python:3.10-alpine
 ENV FLASK_RUN_HOST=0.0.0.0
 
 WORKDIR /
